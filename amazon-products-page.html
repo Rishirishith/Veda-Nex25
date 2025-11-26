@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="VedaNex Amazon Products">
+<meta name="author" content="VedaNex Team">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="C:\Users\Rishith M H\Downloads\veda.png" rel="icon">
+<link href="C:\Users\Rishith M H\Downloads\nex.png" rel="VEDA NEX">
+<title>Amazon Products - VEDA NEX</title>
+
+<script>
+	if (!localStorage.frenify_skin) {
+		localStorage.frenify_skin = 'light';
+	}
+	if (!localStorage.frenify_panel) {
+		localStorage.frenify_panel = '';
+	}
+	document.documentElement.setAttribute("data-techwave-skin", localStorage.frenify_skin);
+	if(localStorage.frenify_panel !== ''){
+		document.documentElement.classList.add(localStorage.frenify_panel);
+	}
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&amp;family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link type="text/css" rel="stylesheet" href="css/plugins8a54.css?ver=2.0.0" />
+<link type="text/css" rel="stylesheet" href="css/style8a54.css?ver=2.0.0" />
+
+<!-- Custom Amazon Products Styles -->
+<style>
+    /* Amazon Products Integration Styles */
+    .amazon-products-page {
+        padding: 0;
+        background: var(--techwave-site-bg-color);
+    }
+    
+    .products-header {
+        background: var(--techwave-some-r-bg-color);
+        padding: 60px 0;
+        text-align: center;
+        border-bottom: 1px solid var(--techwave-border-color);
+    }
+    
+    .products-header h1 {
+        color: var(--techwave-heading-color);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    
+    .products-header p {
+        color: var(--techwave-body-color);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    
+    .trust-badges {
+        background: var(--techwave-main-color);
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+    }
+    
+    .trust-badges .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+    }
+    
+    .products-grid {
+        padding: 60px 0;
+        background: var(--techwave-site-bg-color);
+    }
+    
+    .products-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .product-card {
+        background: var(--techwave-some-r-bg-color);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border: 1px solid var(--techwave-border-color);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #f8f9fa;
+    }
+    
+    .product-info {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-title {
+        color: var(--techwave-heading-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        flex: 1;
+    }
+    
+    .product-rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .stars {
+        color: #ff9800;
+        font-size: 16px;
+    }
+    
+    .rating-text {
+        color: var(--techwave-body-color);
+        font-size: 0.9rem;
+    }
+    
+    .product-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--techwave-main-color);
+        margin-bottom: 15px;
+    }
+    
+    .product-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--techwave-main-color);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .buy-button {
+        background: #FF9900;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 0.95rem;
+    }
+    
+    .buy-button:hover {
+        background: #e6850e;
+        transform: translateY(-2px);
+        color: white;
+    }
+    
+    .products-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .back-to-chat {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--techwave-main-color);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .back-to-chat:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+        color: white;
+    }
+    
+    .disclaimer {
+        background: var(--techwave-some-r-bg-color);
+        padding: 40px 0;
+        text-align: center;
+        border-top: 1px solid var(--techwave-border-color);
+    }
+    
+    .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .disclaimer h3 {
+        color: var(--techwave-heading-color);
+        margin-bottom: 15px;
+    }
+    
+    .disclaimer p {
+        color: var(--techwave-body-color);
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .products-header h1 {
+            font-size: 2rem;
+        }
+        
+        .products-header p {
+            font-size: 1rem;
+        }
+        
+        .trust-badges .container {
+            gap: 20px;
+        }
+        
+        .products-grid-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .back-to-chat {
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- MAIN WRAPPER -->
+<div class="techwave_fn_wrapper">
+    <div class="techwave_fn_wrap">
+        
+        <!-- Amazon Products Page -->
+        <div class="amazon-products-page">
+            
+            <!-- Header -->
+            <div class="products-header">
+                <div class="container">
+                    <h1>🌿 Premium Ayurvedic Products</h1>
+                    <p>Discover authentic Ayurvedic products sourced from trusted suppliers. Each product is carefully selected to support your natural wellness journey.</p>
+                </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="container">
+                    <div class="trust-badge">
+                        <span>🇮🇳</span>
+                        <span>Made for India</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>💰</span>
+                        <span>Cash on Delivery</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>🚚</span>
+                        <span>Free Delivery ₹499+</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>💳</span>
+                        <span>No Cost EMI</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>📱</span>
+                        <span>UPI Payments</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Currency Info Banner -->
+            <div style="background: #e8f5e8; padding: 15px; text-align: center; border-bottom: 1px solid var(--techwave-border-color);">
+                <div class="container">
+                    <span style="font-size: 14px; color: #2e7d32;">
+                        💱 Prices in Indian Rupees (₹) | Original USD prices shown for reference
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <div class="products-container">
+                    <div class="products-grid-container" id="productsContainer">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back to Chat Button -->
+            <a href="ai-chat-bot.html" class="back-to-chat">
+                <span>💬</span>
+                <span>Back to AI Chat</span>
+            </a>
+            
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <div class="disclaimer-content">
+                    <h3>Important Disclaimer</h3>
+                    <p>
+                        As an Amazon Associate, we earn from qualifying purchases. The products shown are 
+                        for informational purposes only and are not intended to diagnose, treat, cure, or 
+                        prevent any disease. Always consult with a healthcare professional before starting 
+                        any new supplement or health regimen. Individual results may vary.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery8a54.js?ver=2.0.0"></script>
+<script type="text/javascript" src="js/plugins8a54.js?ver=2.0.0"></script>
+<script type="text/javascript" src="js/currency-converter.js"></script>
+<script type="text/javascript" src="js/amazon-products-integration.js"></script>
+
+<script>
+// Amazon Products Display Script
+document.addEventListener('DOMContentLoaded', function() {
+    // Product data (same as in amazon-products-integration.js)
+    const products = [
+        {
+            id: 1,
+            title: "Organic Turmeric Curcumin Supplement with Black Pepper",
+            description: "Premium quality turmeric curcumin capsules with black pepper extract for enhanced absorption. Supports joint health, immunity, and natural anti-inflammatory response.",
+            image: "https://m.media-amazon.com/images/I/71uqX3Qe4UL._SL1500_.jpg",
+            url: "https://www.amazon.com/dp/B078K6TVY2?tag=vedanex-20&linkCode=ogi&th=1&psc=1",
+            price: "$24.99",
+            rating: "4.5",
+            reviews: "2,847",
+            category: "supplements",
+            badge: "Best Seller"
+        },
+        {
+            id: 2,
+            title: "Pure Ashwagandha Root Powder - Organic Stress Relief",
+            description: "Traditional Ashwagandha root powder sourced from organic farms. Known as an adaptogen to help manage stress and support energy levels.",
+            image: "https://m.media-amazon.com/images/I/71+5nvmLnzL._SL1500_.jpg",
+            url: "https://www.amazon.com/dp/B07Q4JTQGL?tag=vedanex-20&linkCode=ogi&th=1&psc=1",
+            price: "$19.95",
+            rating: "4.7",
+            reviews: "1,923",
+            category: "herbs"
+        },
+        {
+            id: 3,
+            title: "Cold-Pressed Sesame Oil for Ayurvedic Massage",
+            description: "Pure, unrefined sesame oil perfect for Abhyanga (self-massage) and cooking. Rich in vitamins and minerals, traditionally used in Ayurvedic practices.",
+            image: "https://m.media-amazon.com/images/I/61YJOqDLqzL._SL1024_.jpg",
+            url: "https://www.amazon.com/dp/B01M0TFSOL?tag=vedanex-20&linkCode=ogi&th=1&psc=1",
+            price: "$16.99",
+            rating: "4.3",
+            reviews: "856",
+            category: "oils"
+        },
+        {
+            id: 4,
+            title: "Triphala Powder - Three Fruit Digestive Support",
+            description: "Authentic Triphala powder made from three sacred fruits: Amalaki, Bibhitaki, and Haritaki. Supports healthy digestion and natural detoxification.",
+            image: "https://m.media-amazon.com/images/I/81X3dGZUjZL._SL1500_.jpg",
+            url: "https://www.amazon.com/dp/B00L9HZJLM?tag=vedanex-20&linkCode=ogi&th=1&psc=1",
+            price: "$22.50",
+            rating: "4.6",
+            reviews: "1,456",
+            category: "digestion"
+        },
+        {
+            id: 5,
+            title: "Himalayan Shilajit Resin - Pure Energy Booster",
+            description: "Authentic Himalayan Shilajit resin, a powerful adaptogen known for enhancing energy, stamina, and overall vitality. Lab-tested for purity.",
+            image: "https://m.media-amazon.com/images/I/61ZQZ5X7jzL._SL1500_.jpg",
+            url: "https://www.amazon.com/dp/B07GBCQ4M8?tag=vedanex-20&linkCode=ogi&th=1&psc=1",
+            price: "$39.99",
+            rating: "4.4",
+            reviews: "734",
+            category: "energy",
+            badge: "Premium Quality"
+        },
+        {
+            id: 6,
+            title: "Organic Tulsi Holy Basil Tea - Stress Relief Blend",
+            description: "Premium organic Tulsi (Holy Basil) tea blend. Known as the 'Queen of Herbs' in Ayurveda, supports stress relief and respiratory health.",
+            image: "https://m.media-amazon.com/images/I/71YtqZXBdpL._SL1500_.jpg",
+            url: "https://www.amazon.com/dp/B00L8NO2PY?tag=vedanex-20&linkCode=ogi&th=1&psc=1",
+            price: "$14.99",
+            rating: "4.8",
+            reviews: "2,109",
+            category: "tea"
+        }
+    ];
+    
+    // Generate stars display
+    function generateStars(rating) {
+        const fullStars = Math.floor(parseFloat(rating));
+        const hasHalfStar = parseFloat(rating) % 1 !== 0;
+        let stars = '';
+        
+        for (let i = 0; i < fullStars; i++) {
+            stars += '★';
+        }
+        if (hasHalfStar) {
+            stars += '☆';
+        }
+        for (let i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+            stars += '☆';
+        }
+        
+        return stars;
+    }
+    
+    // Render products
+    function renderProducts() {
+        const container = document.getElementById('productsContainer');
+        let html = '';
+        
+        products.forEach(product => {
+            const stars = generateStars(product.rating);
+            
+            // Add India-specific badges
+            const inrPrice = parseFloat(product.price.replace('₹', '').replace(',', ''));
+            const badges = [];
+            if (inrPrice > 499) badges.push('<span style="background: #4CAF50; color: white; padding: 4px 8px; border-radius: 12px; font-size: 10px; margin-right: 4px;">Free Delivery</span>');
+            if (inrPrice > 1999) badges.push('<span style="background: #2196F3; color: white; padding: 4px 8px; border-radius: 12px; font-size: 10px; margin-right: 4px;">No Cost EMI</span>');
+            badges.push('<span style="background: #FF9800; color: white; padding: 4px 8px; border-radius: 12px; font-size: 10px;">COD Available</span>');
+            
+            html += `
+                <div class="product-card">
+                    <div style="position: relative;">
+                        <img src="${product.image}" alt="${product.title}" class="product-image" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI4MCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOEZGIi8+CjxwYXRoIGQ9Ik0xMjAgODBIMTYwVjEyMEgxMjBWODBaIiBmaWxsPSIjNEFERTgwIi8+Cjwvc3ZnPgo='">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <div class="product-rating">
+                            <span class="stars">${stars}</span>
+                            <span class="rating-text">${product.rating} (${product.reviews} reviews)</span>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            ${badges.join('')}
+                        </div>
+                        <div class="product-price">
+                            ${product.price}
+                            ${product.originalPrice ? `<span style="color: #666; font-size: 0.8em; text-decoration: line-through; margin-left: 8px;">${product.originalPrice}</span>` : ''}
+                        </div>
+                        <a href="${product.url}" target="_blank" rel="noopener noreferrer" class="buy-button">
+                            🛒 Amazon India
+                        </a>
+                    </div>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+    }
+    
+    // Initialize
+    renderProducts();
+});
+</script>
+
+</body>
+</html>

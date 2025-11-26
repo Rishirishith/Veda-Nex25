@@ -9,12 +9,12 @@ Welcome to **AyurvediCure**, your personalized AI-ML based Ayurvedic doctor. Our
 AyurvediCure provides users with two options for consultations:
 
 1. **Talk to AI Doctor 🤖**: Get instant advice and recommendations from our AI-powered Ayurvedic doctor.
-2. **Talk to Human Doctor 🧑‍⚕️**: Connect with a real Ayurvedic doctor for personalized consultations.
+2. **Find nearby ayurvedic clinics 🧑‍⚕️**: Connect with a real Ayurvedic doctor for personalized consultations.
 
 ### Features 🌿
 
 - **Personalized and Private Conversations**: All your interactions are secure and tailored to your needs.
-- **Flexibility**: Switch seamlessly between AI and human doctors during your consultation.
+- **Flexibility**: Switch seamlessly between Ask Veda-Nex and nearby ayurvedic clinics during your consultation.
 - **Medical Records Safety**: Your medical records are stored securely and can be accessed anytime.
 - **Locate Nearby Ayurvedic Doctors**: Find and connect with Ayurvedic doctors near you.
 
@@ -24,8 +24,8 @@ To start using AyurvediCure, follow these steps:
 
 1. **Register**: Sign up on our platform to create your account.
 2. **Dashboard**: Once registered, access your personalized dashboard.
-3. **Choose Your Doctor**: Select between talking to our AI doctor or a human doctor.
-4. **Switch Flexibly**: Switch between AI and human doctors as needed during your consultation.
+3. **Choose Your Doctor**: Select between Ask Veda-Nex or nearby ayurvedic clinics.
+4. **Switch Flexibly**: Switch between Ask Veda-Nex and nearby ayurvedic clinics as needed during your consultation.
 5. **Locate Doctors**: Use our tool to find nearby Ayurvedic doctors.
 
 ## Project Link 🔗

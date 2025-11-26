@@ -1,0 +1,49 @@
+/* Logo visibility improvements */
+.leftpanel_logo {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.leftpanel_logo img,
+.desktop_logo,
+.retina_logo {
+    max-height: 45px !important;
+    width: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    object-fit: contain !important;
+}
+
+.fn_logo {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Sign-in page logo positioning */
+.mynav {
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    z-index: 9999 !important;
+    display: block !important;
+}
+
+.mynav img {
+    height: 50px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) !important;
+}
+
+/* Make sure logo containers have proper styling */
+.leftpanel_logo .fn_logo span {
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.full_logo,
+.short_logo {
+    display: inline-block !important;
+    visibility: visible !important;
+}

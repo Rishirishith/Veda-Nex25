@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaNex TTS Demo - Ayurvedic Text-to-Speech</title>
+    <style>
+        :root {
+            --techwave-main-color: #107c0d;
+            --techwave-site-bg-color: #ffffff;
+            --techwave-heading-color: #333;
+            --techwave-body-color: #666;
+            --techwave-border-color: #ddd;
+            --techwave-some-a-bg-color: #f8f9fa;
+            --techwave-some-r-bg-color: #ffffff;
+            --techwave-heading-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        [data-techwave-skin="dark"] {
+            --techwave-site-bg-color: #1c1925;
+            --techwave-heading-color: #c0bcca;
+            --techwave-body-color: #7e7a86;
+            --techwave-border-color: #312e37;
+            --techwave-some-a-bg-color: #2a2636;
+            --techwave-some-r-bg-color: #252131;
+        }
+
+        body {
+            font-family: var(--techwave-heading-font-family);
+            background: var(--techwave-site-bg-color);
+            color: var(--techwave-body-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--techwave-heading-color);
+        }
+
+        .demo-section {
+            background: var(--techwave-some-r-bg-color);
+            border: 1px solid var(--techwave-border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .ayurvedic-content {
+            background: var(--techwave-some-a-bg-color);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid var(--techwave-main-color);
+        }
+
+        .chat-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bot__chat {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .bot__chat .chat {
+            background: var(--techwave-some-a-bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--techwave-border-color);
+            flex: 1;
+            position: relative;
+        }
+
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .demo-btn {
+            background: var(--techwave-main-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .demo-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--techwave-main-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .highlight {
+            background: rgba(16, 124, 13, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: var(--techwave-some-a-bg-color);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--techwave-border-color);
+        }
+
+        .demo-text-area {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid var(--techwave-border-color);
+            border-radius: 6px;
+            background: var(--techwave-site-bg-color);
+            color: var(--techwave-heading-color);
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .demo-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+        🌙
+    </button>
+
+    <div class="container">
+        <h1>🌿 VedaNex Text-to-Speech Demo</h1>
+        <p>Experience our advanced TTS feature designed specifically for Ayurvedic content. The floating voice button provides easy access to speech synthesis throughout your website.</p>
+
+        <div class="demo-section">
+            <h2>📖 Ayurvedic Content Examples</h2>
+            
+            <div class="ayurvedic-content">
+                <h3>🧘‍♀️ Understanding Your Dosha</h3>
+                <p>According to Ayurveda, every individual has a unique constitution called <span class="highlight">Prakriti</span>, which is determined by the balance of three doshas: Vata, Pitta, and Kapha. Vata governs movement and communication, Pitta controls digestion and metabolism, while Kapha provides structure and immunity. Understanding your dominant dosha helps in choosing the right foods, lifestyle practices, and treatments for optimal health.</p>
+            </div>
+
+            <div class="ayurvedic-content">
+                <h3>🌱 Turmeric: The Golden Healer</h3>
+                <p>Turmeric, known as <span class="highlight">Haridra</span> in Sanskrit, is one of the most revered herbs in Ayurveda. Its active compound curcumin possesses powerful anti-inflammatory and antioxidant properties. Regular consumption helps balance all three doshas, supports liver function, promotes healthy digestion, and enhances immunity. Mix half a teaspoon with warm milk and honey before bedtime for best results.</p>
+            </div>
+
+            <div class="ayurvedic-content">
+                <h3>🍃 Daily Routine (Dinacharya)</h3>
+                <p>Ayurveda emphasizes the importance of <span class="highlight">Dinacharya</span> or daily routine for maintaining health. Wake up before sunrise, practice oil pulling with sesame oil, perform gentle yoga or pranayama, eat your largest meal at midday when digestive fire is strongest, and wind down with meditation in the evening. This routine helps synchronize your body with natural circadian rhythms.</p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🤖 AI Chatbot Response Demo</h2>
+            <p>This simulates how TTS works with chatbot responses on your website:</p>
+            
+            <div class="chat-demo">
+                <div class="bot__chat">
+                    <div class="chat">
+                        <strong>VedaNex AI:</strong> Based on your symptoms of fatigue, poor digestion, and restlessness, you appear to have a Vata imbalance. I recommend incorporating warm, cooked foods like kitchari, practicing gentle yoga, and establishing a regular sleep schedule. Consider taking Ashwagandha supplement and performing daily oil massage with sesame oil to ground your energy.
+                    </div>
+                </div>
+
+                <div class="bot__chat">
+                    <div class="chat">
+                        <strong>VedaNex AI:</strong> For your acidity and skin irritation, these are classic Pitta aggravation symptoms. Avoid spicy, oily, and citrus foods. Include cooling foods like cucumber, coconut water, and leafy greens. Practice Sheetali pranayama (cooling breath) and apply aloe vera gel to affected skin areas. Triphala churna before bed will help regulate digestion.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎛️ Interactive TTS Controls</h2>
+            <p>Test different TTS functionalities:</p>
+            
+            <div class="controls">
+                <button class="demo-btn" onclick="demoBasicTTS()">🔊 Speak Welcome Message</button>
+                <button class="demo-btn" onclick="demoAyurvedicTerms()">🌿 Pronounce Sanskrit Terms</button>
+                <button class="demo-btn" onclick="demoTreatmentGuide()">💊 Treatment Instructions</button>
+                <button class="demo-btn" onclick="stopAllSpeech()">⏹️ Stop Speech</button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h4>Custom Text to Speech:</h4>
+                <textarea 
+                    class="demo-text-area" 
+                    id="customText" 
+                    placeholder="Enter any Ayurvedic content here to test TTS functionality..."
+                >Namaste! Welcome to VedaNex, your trusted companion for Ayurvedic wellness. Our ancient healing system offers natural remedies for modern health challenges.</textarea>
+                <div style="margin-top: 10px;">
+                    <button class="demo-btn" onclick="speakCustomText()">🎤 Speak Custom Text</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>✨ TTS Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>🎯 Smart Voice Selection</h4>
+                    <p>Automatically selects soothing female voices perfect for Ayurvedic content</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎚️ Adjustable Settings</h4>
+                    <p>Control speech rate, pitch, and volume for comfortable listening</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Mobile Responsive</h4>
+                    <p>Optimized floating controls that work seamlessly on all devices</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔄 Auto-Integration</h4>
+                    <p>Automatically adds TTS buttons to chatbot responses and content</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎨 Theme Adaptive</h4>
+                    <p>Matches your website's light/dark theme automatically</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🚀 Zero Dependencies</h4>
+                    <p>Uses native Web Speech API - no external services required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🔧 Implementation</h2>
+            <p>The TTS feature is already integrated into your website. Here's what you get:</p>
+            <ul>
+                <li><strong>Floating Voice Button:</strong> Always accessible in the bottom-right corner</li>
+                <li><strong>Automatic Chat Enhancement:</strong> All bot responses get TTS buttons automatically</li>
+                <li><strong>Text Selection:</strong> Select any text on the page and have it read aloud</li>
+                <li><strong>Customizable Settings:</strong> Adjust voice parameters in real-time</li>
+                <li><strong>React/Next.js Components:</strong> Ready-to-use components for modern frameworks</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Include the TTS feature -->
+    <script src="js/tts-feature.js"></script>
+
+    <script>
+        // Demo functions
+        function demoBasicTTS() {
+            const text = "Welcome to VedaNex, your comprehensive guide to Ayurvedic wellness. Discover the ancient wisdom of natural healing and transform your health journey with time-tested remedies and personalized treatments.";
+            if (window.vedanexTTS) {
+                window.vedanexTTS.speakText(text);
+            }
+        }
+
+        function demoAyurvedicTerms() {
+            const text = "Let me pronounce some important Ayurvedic terms: Prakriti means constitution, Vikriti refers to current imbalance, Ojas is vital essence, Tejas represents inner radiance, and Prana is life force energy. Panchakarma includes five purification procedures for deep detoxification.";
+            if (window.vedanexTTS) {
+                window.vedanexTTS.speakText(text, { rate: 0.8 }); // Slower for pronunciation
+            }
+        }
+
+        function demoTreatmentGuide() {
+            const text = "For optimal results, take Triphala churna one teaspoon with warm water before bedtime. Practice Surya Namaskara in the morning, followed by Pranayama breathing exercises. Eat your main meal between 12 to 2 PM when Agni or digestive fire is strongest. Always consult an Ayurvedic practitioner before starting new treatments.";
+            if (window.vedanexTTS) {
+                window.vedanexTTS.speakText(text);
+            }
+        }
+
+        function speakCustomText() {
+            const textArea = document.getElementById('customText');
+            const text = textArea.value.trim();
+            if (text && window.vedanexTTS) {
+                window.vedanexTTS.speakText(text);
+            } else {
+                alert('Please enter some text to speak!');
+            }
+        }
+
+        function stopAllSpeech() {
+            if (window.vedanexTTS) {
+                window.vedanexTTS.stopSpeech();
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-techwave-skin');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-techwave-skin', newTheme);
+            
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Initialize demo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('VedaNex TTS Demo loaded successfully!');
+            
+            // Add welcome message
+            setTimeout(() => {
+                if (window.vedanexTTS) {
+                    window.vedanexTTS.showNotification('TTS Demo ready! Try the floating voice button.', 'success');
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "vedanex-ayurvedic-tts",
+  "version": "2.0.0",
+  "description": "VedaNex Ayurvedic Wellness Platform with Automatic Text-to-Speech",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "keywords": [
+    "ayurveda",
+    "text-to-speech",
+    "wellness",
+    "react",
+    "nextjs",
+    "tts",
+    "speech-synthesis",
+    "natural-healing"
+  ],
+  "author": "VedaNex Team",
+  "license": "MIT"
+}

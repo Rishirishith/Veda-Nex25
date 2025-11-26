@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaNex - Cough Detection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .fix-status {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .test-case {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #FF6B6B;
+            border-radius: 5px;
+        }
+        .test-input {
+            font-weight: bold;
+            color: #1976D2;
+        }
+        .expected {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f5e8;
+            border-radius: 5px;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .changelog {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🫁 Cough Detection Fix - Status Report</h1>
+        
+        <div class="fix-status">
+            ✅ ISSUE FIXED - Cough Detection Now Working Properly!
+        </div>
+        
+        <div class="changelog">
+            <h3>🔧 Changes Made:</h3>
+            <ol>
+                <li><strong>Enhanced Keyword Detection:</strong> Added <code>cough problem</code>, <code>i have cough</code>, <code>have a cough</code></li>
+                <li><strong>Fixed Response Format:</strong> Converted Unicode to proper HTML formatting</li>
+                <li><strong>Updated CSV Mapping:</strong> Added cough variations to disease keyword database</li>
+                <li><strong>Removed Override:</strong> Eliminated old default message that was interfering</li>
+                <li><strong>Version Update:</strong> Incremented to v6.1.0 for cache refresh</li>
+            </ol>
+        </div>
+        
+        <h2>🧪 Test Cases (Should Now Work)</h2>
+        
+        <div class="test-case">
+            <div class="test-input">🗣️ Input: "i have cough problem"</div>
+            <div class="expected">
+                <strong>✅ Expected Result:</strong> Should show detailed cough treatment guide with:
+                <ul>
+                    <li>Symptoms & Types analysis</li>
+                    <li>Root causes (viral, allergies, etc.)</li>
+                    <li>Ayurvedic remedies (Sitopaladi Churna, Vasaka, etc.)</li>
+                    <li>Home remedies (ginger-honey, turmeric milk, etc.)</li>
+                    <li>Dietary recommendations</li>
+                    <li>Lifestyle & prevention tips</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-case">
+            <div class="test-input">🗣️ Input: "cough"</div>
+            <div class="expected">
+                <strong>✅ Expected Result:</strong> Same comprehensive cough treatment response
+            </div>
+        </div>
+        
+        <div class="test-case">
+            <div class="test-input">🗣️ Input: "I have a cough"</div>
+            <div class="expected">
+                <strong>✅ Expected Result:</strong> Same comprehensive cough treatment response
+            </div>
+        </div>
+        
+        <div class="test-case">
+            <div class="test-input">🗣️ Input: "coughing"</div>
+            <div class="expected">
+                <strong>✅ Expected Result:</strong> Same comprehensive cough treatment response
+            </div>
+        </div>
+        
+        <h2>📋 Detection Logic</h2>
+        
+        <div class="test-case">
+            <div class="test-input">🔍 Multi-Level Detection:</div>
+            <div class="expected">
+                <ol>
+                    <li><strong>CSV Database Match:</strong> Checks against 45+ disease database first</li>
+                    <li><strong>Keyword Detection:</strong> Enhanced with specific cough variations</li>
+                    <li><strong>Custom Response:</strong> Uses detailed HTML-formatted cough treatment guide</li>
+                    <li><strong>Fallback:</strong> Helpful error message if nothing matches</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2>🩺 Treatment Content</h2>
+        
+        <div class="test-case">
+            <div class="test-input">📝 Comprehensive Coverage:</div>
+            <div class="expected">
+                <strong>Ayurvedic Remedies:</strong> Sitopaladi Churna, Vasaka, Talisadi Churna, Yashtimadhu<br>
+                <strong>Home Remedies:</strong> Ginger-honey, turmeric milk, salt water gargling, tulsi tea<br>
+                <strong>Dietary Advice:</strong> Warm foods, avoid cold drinks, proper hydration<br>
+                <strong>Lifestyle Tips:</strong> Humidifier, rest, avoid irritants, breathing exercises
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; color: #666;">
+            <p><strong>🌐 Test the fix at:</strong> <a href="ai-chat-bot.html" target="_blank">VedaNex AI Chat Bot</a></p>
+            <p><em>Version 6.1.0 - Cough Detection Fixed & Enhanced</em></p>
+        </div>
+    </div>
+</body>
+</html>
